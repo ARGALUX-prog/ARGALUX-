@@ -39,12 +39,15 @@
         }
         
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--primary);
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            font-weight: 700;
             cursor: pointer;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
         }
         
         .nav-menu {
@@ -956,7 +959,9 @@
     <!-- HEADER AVEC NAVIGATION -->
     <header class="main-header">
         <nav class="nav-container">
-            <a class="logo" onclick="showPage('home')">Organix</a>
+            <a class="logo" onclick="showPage('home')">
+                <img src="https://github.com/user-attachments/assets/27e2ec1e-3c4b-4415-91a5-dc8cc0919a12" alt="Organix Logo">
+            </a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
