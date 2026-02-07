@@ -19,41 +19,32 @@
         * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
         body { font-family: 'Poppins', sans-serif; background: #FAF9F6; color: var(--text); overflow-x: hidden; }
         
-        /* HEADER AVEC NAVIGATION */
+        /* HEADER AVEC NAVIGATION - MODIFIÉ */
         .main-header {
             position: fixed;
-            top: 35px;
+            top: 30px;
             width: 100%;
             background: white;
             z-index: 9998;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             border-bottom: 1px solid #f0f0f0;
+            height: 50px;
         }
         
         .nav-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             padding: 0 5%;
-            height: 60px;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        
-        .logo img {
-            height: 40px;
-            width: auto;
+            height: 50px;
         }
         
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 2rem;
+            margin: 0;
+            padding: 0;
         }
         
         .nav-menu a {
@@ -63,6 +54,7 @@
             font-size: 0.9rem;
             transition: color 0.3s;
             cursor: pointer;
+            padding: 0.5rem 1rem;
         }
         
         .nav-menu a:hover {
@@ -76,13 +68,15 @@
             font-size: 1.5rem;
             color: var(--primary);
             cursor: pointer;
+            position: absolute;
+            right: 5%;
         }
         
         .announcement-bar { 
             position: fixed; 
             top: 0; 
             width: 100%; 
-            height: 35px; 
+            height: 30px;
             background: #1A1A1A; 
             color: white; 
             z-index: 9999; 
@@ -110,9 +104,9 @@
             100% { transform: translateX(-50%); } 
         }
 
-        /* HERO SECTION - CORRIGÉE */
+        /* HERO SECTION - MODIFIÉE AVEC LOGOS DE CERTIFICATION */
         #hero { 
-            height: 100vh; /* Prend toute la hauteur de l'écran */
+            height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/user-attachments/assets/a6306777-45bd-4a87-8df6-0844b26414af') center/cover no-repeat; 
             display: flex; 
             align-items: center; 
@@ -120,8 +114,8 @@
             text-align: center; 
             color: white; 
             position: relative;
-            margin-top: 0; /* Supprimé le margin-top */
-            padding-top: 95px; /* Padding pour compenser le header fixe */
+            margin-top: 0;
+            padding-top: 80px;
         }
         
         .hero-content {
@@ -142,6 +136,32 @@
             margin-bottom: 2rem;
             font-weight: 300;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        /* NOUVEAU : LOGOS DE CERTIFICATION */
+        .certification-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .certification-logo {
+            height: 50px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s, filter 0.3s;
+        }
+        
+        .certification-logo:hover {
+            transform: scale(1.1);
+            filter: brightness(0.8) invert(1);
         }
         
         /* SECTION PROMOTIONS */
@@ -612,7 +632,7 @@
             padding: 3rem 5%;
             border-bottom-left-radius: 60px;
             margin-bottom: 2rem;
-            padding-top: 120px;
+            padding-top: 110px;
         }
 
         .product-page-content {
@@ -864,7 +884,7 @@
             
             .nav-menu {
                 position: fixed;
-                top: 95px;
+                top: 80px;
                 left: -100%;
                 width: 100%;
                 flex-direction: column;
@@ -872,6 +892,7 @@
                 padding: 2rem;
                 transition: 0.3s;
                 box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                text-align: center;
             }
             
             .nav-menu.active {
@@ -884,8 +905,8 @@
             }
             
             #hero {
-                height: 80vh; /* Plus petit sur mobile */
-                padding-top: 95px;
+                height: 80vh;
+                padding-top: 80px;
             }
             
             #hero h1 {
@@ -894,6 +915,15 @@
             
             #hero .subtitle {
                 font-size: 1.2rem;
+            }
+            
+            .certification-logos {
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .certification-logo {
+                height: 40px;
             }
             
             .section-title {
@@ -909,7 +939,7 @@
             }
 
             .product-page-hero {
-                padding-top: 110px;
+                padding-top: 100px;
             }
 
             .product-page-title {
@@ -933,7 +963,7 @@
             
             #hero {
                 height: 70vh;
-                padding-top: 95px;
+                padding-top: 80px;
             }
             
             #hero h1 {
@@ -942,6 +972,15 @@
             
             #hero .subtitle {
                 font-size: 1rem;
+            }
+            
+            .certification-logos {
+                gap: 0.7rem;
+                padding: 0.8rem;
+            }
+            
+            .certification-logo {
+                height: 35px;
             }
         }
     </style>
@@ -956,13 +995,9 @@
         </div>
     </div>
     
-    <!-- HEADER AVEC NAVIGATION -->
+    <!-- HEADER AVEC NAVIGATION - MODIFIÉ -->
     <header class="main-header">
         <nav class="nav-container">
-            <a class="logo" onclick="showPage('home')">
-                <img src="https://github.com/user-attachments/assets/27e2ec1e-3c4b-4415-91a5-dc8cc0919a12" alt="Organix Logo">
-            </a>
-            
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -977,11 +1012,20 @@
 
     <!-- PAGE PRINCIPALE (ACCUEIL) -->
     <div id="home-page" class="page-container active">
-        <!-- HERO SECTION AMÉLIORÉE -->
+        <!-- HERO SECTION AMÉLIORÉE AVEC LOGOS DE CERTIFICATION -->
         <section id="hero">
             <div class="hero-content">
                 <h1>L'Or du Maroc dans Votre Peau</h1>
                 <p class="subtitle">Découvrez la puissance régénérante de l'Argan 100% bio</p>
+                
+                <!-- LOGOS DE CERTIFICATION -->
+                <div class="certification-logos">
+                    <img src="https://github.com/user-attachments/assets/d54e8254-5966-4b6e-9e45-491e4ac20048" alt="Certification Bio" class="certification-logo">
+                    <img src="https://github.com/user-attachments/assets/7f721c04-1f0d-4b23-9db8-5ca6ce14b078" alt="Certification Qualité" class="certification-logo">
+                    <img src="https://github.com/user-attachments/assets/c6a43102-d1a6-46d8-a8ad-9135c71b93d9" alt="Certification Écologique" class="certification-logo">
+                    <img src="https://github.com/user-attachments/assets/40f4d628-7a6b-4891-9b54-691091a6762e" alt="Certification Naturelle" class="certification-logo">
+                    <img src="https://github.com/user-attachments/assets/973c2e00-2788-458e-a73e-54756febb56a" alt="Certification Commerce Équitable" class="certification-logo">
+                </div>
             </div>
         </section>
         
