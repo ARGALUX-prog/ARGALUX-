@@ -320,9 +320,40 @@
             z-index: 5;
         }
         
-        /* SECTION TOUS LES PRODUITS */
+        /* SECTION BOUTON VOIR TOUS LES PRODUITS */
+        .view-all-section {
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .view-all-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(188, 143, 143, 0.3);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .view-all-button:hover {
+            background: #a87a7a;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(188, 143, 143, 0.4);
+        }
+        
+        /* SECTION TOUS LES PRODUITS (PAGE COMPLÈTE) */
         .all-products-section {
             padding: 3rem 5%;
+            background: #f9f5f0;
         }
         
         .all-products-grid {
@@ -925,18 +956,18 @@
     <!-- HEADER AVEC NAVIGATION -->
     <header class="main-header">
         <nav class="nav-container">
-            <a class="logo" onclick="showHomePage()">Organix</a>
+            <a class="logo" onclick="showPage('home')">Organix</a>
             
             <button class="mobile-menu-btn" id="mobileMenuBtn">
                 <i class="fas fa-bars"></i>
             </button>
             
             <ul class="nav-menu" id="navMenu">
-                <li><a onclick="showHomePage()">Accueil</a></li>
-                <li><a onclick="showHomePage()">Promotions</a></li>
-                <li><a onclick="showHomePage()">Top Ventes</a></li>
-                <li><a onclick="showHomePage()">Tous les produits</a></li>
-                <li><a onclick="showHomePage()">Contact</a></li>
+                <li><a onclick="showPage('home')">Accueil</a></li>
+                <li><a onclick="showPage('promo')">Promotions</a></li>
+                <li><a onclick="showPage('best-sellers')">Top Ventes</a></li>
+                <li><a onclick="showPage('all-products')">Tous les produits</a></li>
+                <li><a onclick="showPage('contact')">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -1000,9 +1031,47 @@
             </div>
         </section>
         
-        <!-- SECTION TOUS LES PRODUITS -->
-        <section class="all-products-section" id="all-products">
-            <h2 class="section-title">Notre Collection Exclusif</h2>
+        <!-- SECTION BOUTON VOIR TOUS LES PRODUITS -->
+        <section class="view-all-section">
+            <button class="view-all-button" onclick="showPage('all-products')">
+                <i class="fas fa-eye"></i> Voir tous nos produits
+            </button>
+            <p>Découvrez notre collection complète de produits à l'argan bio</p>
+        </section>
+
+        <footer id="contact">
+            <div class="footer-logo"><img src="https://github.com/user-attachments/assets/27e2ec1e-3c4b-4415-91a5-dc8cc0919a12" alt="Organix Logo"></div>
+            
+            <!-- SECTION CONTACT -->
+            <div class="contact-info">
+                <h3>Commandez en 1 clic</h3>
+                <p><i class="fas fa-phone"></i> +212 621-891963 (WhatsApp)</p>
+                <p><i class="fas fa-clock"></i> Réponse garantie en 5 min</p>
+                <p><i class="fas fa-shipping-fast"></i> Livraison 48h partout au Maroc</p>
+            </div>
+
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+
+            <div class="footer-nav">
+                <a onclick="showInfo('objectif')">Notre Mission Sociale</a>
+                <a onclick="showInfo('histoire')">L'Histoire Organix</a>
+                <a onclick="showInfo('processus')">Production Artisanale</a>
+            </div>
+            <div style="color:#666; font-size:0.7rem; margin-top: 2rem;">
+                <p>Chaque achat soutient les femmes artisanes berbères</p>
+                <p>&copy; 2024 Organix. Beauté Éthique & Naturelle.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PAGE TOUS LES PRODUITS -->
+    <div id="all-products-page" class="page-container">
+        <section class="all-products-section">
+            <div class="section-title">Tous Nos Produits</div>
             <div class="all-products-grid">
                 <a class="product-card" onclick="openProductPage('antichute')">
                     <div class="product-image">
@@ -1049,45 +1118,46 @@
                         <small>Purification intense</small>
                     </div>
                 </a>
+                
+                <!-- Produits supplémentaires pour montrer tous les produits -->
+                <a class="product-card" onclick="openProductPage('antichute')">
+                    <div class="product-image">
+                        <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
+                    </div>
+                    <div class="product-info">
+                        <h3>Pack Anti-Chute (Grand)</h3>
+                        <div class="new-price">450 DH</div>
+                        <small>Format familial</small>
+                    </div>
+                </a>
+
+                <a class="product-card" onclick="openProductPage('argalux50')">
+                    <div class="product-image">
+                        <img src="https://github.com/user-attachments/assets/36fcd538-c4fa-46e5-be50-06bf6a3b42fb" alt="Huile Argan">
+                    </div>
+                    <div class="product-info">
+                        <h3>Huile d'Argan 100ml</h3>
+                        <div class="new-price">150 DH</div>
+                        <small>Format économique</small>
+                    </div>
+                </a>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="back-to-home" onclick="showPage('home')">
+                    <i class="fas fa-arrow-left"></i> Retour à l'accueil
+                </button>
             </div>
         </section>
-
-        <footer id="contact">
-            <div class="footer-logo"><img src="https://github.com/user-attachments/assets/27e2ec1e-3c4b-4415-91a5-dc8cc0919a12" alt="Organix Logo"></div>
-            
-            <!-- SECTION CONTACT -->
-            <div class="contact-info">
-                <h3>Commandez en 1 clic</h3>
-                <p><i class="fas fa-phone"></i> +212 621-891963 (WhatsApp)</p>
-                <p><i class="fas fa-clock"></i> Réponse garantie en 5 min</p>
-                <p><i class="fas fa-shipping-fast"></i> Livraison 48h partout au Maroc</p>
-            </div>
-
-            <div class="social-links">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-tiktok"></i></a>
-            </div>
-
-            <div class="footer-nav">
-                <a onclick="showInfo('objectif')">Notre Mission Sociale</a>
-                <a onclick="showInfo('histoire')">L'Histoire Organix</a>
-                <a onclick="showInfo('processus')">Production Artisanale</a>
-            </div>
-            <div style="color:#666; font-size:0.7rem; margin-top: 2rem;">
-                <p>Chaque achat soutient les femmes artisanes berbères</p>
-                <p>&copy; 2024 Organix. Beauté Éthique & Naturelle.</p>
-            </div>
-        </footer>
     </div>
 
-    <!-- PAGES PRODUITS (CACHÉES PAR DÉFAUT) -->
+    <!-- PAGES PRODUITS INDIVIDUELS -->
     <div id="product-antichute" class="page-container">
         <section class="product-page-hero">
             <div class="product-page-content">
                 <div class="product-breadcrumb">
-                    <a onclick="showHomePage()">Accueil</a> &gt; 
-                    <a onclick="showHomePage()">Promotions</a> &gt; 
+                    <a onclick="showPage('home')">Accueil</a> &gt; 
+                    <a onclick="showPage('all-products')">Tous les produits</a> &gt; 
                     <span>Pack Anti-Chute Complet</span>
                 </div>
                 
@@ -1141,7 +1211,7 @@
                             </div>
                         </div>
                         
-                        <a class="back-to-home" onclick="showHomePage()">
+                        <a class="back-to-home" onclick="showPage('all-products')">
                             <i class="fas fa-arrow-left"></i> Voir tous nos produits
                         </a>
                     </div>
@@ -1154,8 +1224,8 @@
         <section class="product-page-hero">
             <div class="product-page-content">
                 <div class="product-breadcrumb">
-                    <a onclick="showHomePage()">Accueil</a> &gt; 
-                    <a onclick="showHomePage()">Tous les produits</a> &gt; 
+                    <a onclick="showPage('home')">Accueil</a> &gt; 
+                    <a onclick="showPage('all-products')">Tous les produits</a> &gt; 
                     <span>Gommage Figue Barbarie</span>
                 </div>
                 
@@ -1197,8 +1267,8 @@
                             </div>
                         </div>
                         
-                        <a class="back-to-home" onclick="showHomePage()">
-                            <i class="fas fa-arrow-left"></i> Retour à la boutique
+                        <a class="back-to-home" onclick="showPage('all-products')">
+                            <i class="fas fa-arrow-left"></i> Retour aux produits
                         </a>
                     </div>
                 </div>
@@ -1210,8 +1280,8 @@
         <section class="product-page-hero">
             <div class="product-page-content">
                 <div class="product-breadcrumb">
-                    <a onclick="showHomePage()">Accueil</a> &gt; 
-                    <a onclick="showHomePage()">Top Ventes</a> &gt; 
+                    <a onclick="showPage('home')">Accueil</a> &gt; 
+                    <a onclick="showPage('all-products')">Tous les produits</a> &gt; 
                     <span>Huile d'Argan Pure</span>
                 </div>
                 
@@ -1253,7 +1323,7 @@
                             </div>
                         </div>
                         
-                        <a class="back-to-home" onclick="showHomePage()">
+                        <a class="back-to-home" onclick="showPage('all-products')">
                             <i class="fas fa-arrow-left"></i> Voir plus de produits
                         </a>
                     </div>
@@ -1266,8 +1336,8 @@
         <section class="product-page-hero">
             <div class="product-page-content">
                 <div class="product-breadcrumb">
-                    <a onclick="showHomePage()">Accueil</a> &gt; 
-                    <a onclick="showHomePage()">Top Ventes</a> &gt; 
+                    <a onclick="showPage('home')">Accueil</a> &gt; 
+                    <a onclick="showPage('all-products')">Tous les produits</a> &gt; 
                     <span>Masque Ghassoul</span>
                 </div>
                 
@@ -1309,8 +1379,8 @@
                             </div>
                         </div>
                         
-                        <a class="back-to-home" onclick="showHomePage()">
-                            <i class="fas fa-arrow-left"></i> Retour à la boutique
+                        <a class="back-to-home" onclick="showPage('all-products')">
+                            <i class="fas fa-arrow-left"></i> Retour aux produits
                         </a>
                     </div>
                 </div>
@@ -1351,15 +1421,49 @@
         });
 
         // FONCTIONS POUR LA NAVIGATION DES PAGES
-        function showHomePage() {
+        function showPage(pageId) {
             // Cacher toutes les pages
             document.querySelectorAll('.page-container').forEach(page => {
                 page.classList.remove('active');
             });
-            // Afficher la page d'accueil
-            document.getElementById('home-page').classList.add('active');
-            // Changer l'URL sans recharger la page
-            window.history.pushState({}, '', window.location.pathname);
+            
+            // Afficher la page demandée
+            switch(pageId) {
+                case 'home':
+                    document.getElementById('home-page').classList.add('active');
+                    window.history.pushState({}, '', window.location.pathname);
+                    break;
+                case 'promo':
+                    document.getElementById('home-page').classList.add('active');
+                    window.history.pushState({}, '', window.location.pathname);
+                    setTimeout(() => {
+                        document.getElementById('promo').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                    break;
+                case 'best-sellers':
+                    document.getElementById('home-page').classList.add('active');
+                    window.history.pushState({}, '', window.location.pathname);
+                    setTimeout(() => {
+                        document.getElementById('best-sellers').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                    break;
+                case 'all-products':
+                    document.getElementById('all-products-page').classList.add('active');
+                    window.history.pushState({}, '', '?page=all-products');
+                    break;
+                case 'contact':
+                    document.getElementById('home-page').classList.add('active');
+                    window.history.pushState({}, '', window.location.pathname);
+                    setTimeout(() => {
+                        document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+                    }, 100);
+                    break;
+            }
+            
+            // Fermer le menu mobile si ouvert
+            navMenu.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            
             // Remonter en haut de la page
             window.scrollTo(0, 0);
         }
@@ -1396,6 +1500,7 @@
         window.addEventListener('DOMContentLoaded', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const product = urlParams.get('product');
+            const page = urlParams.get('page');
             
             if (product) {
                 // Si un produit est spécifié dans l'URL, l'afficher directement
@@ -1417,10 +1522,12 @@
                         openProductPage('ghassoul');
                         break;
                     default:
-                        showHomePage();
+                        showPage('home');
                 }
+            } else if (page === 'all-products') {
+                showPage('all-products');
             } else {
-                showHomePage();
+                showPage('home');
             }
         });
 
@@ -1428,6 +1535,7 @@
         window.addEventListener('popstate', () => {
             const urlParams = new URLSearchParams(window.location.search);
             const product = urlParams.get('product');
+            const page = urlParams.get('page');
             
             if (product) {
                 switch(product) {
@@ -1448,10 +1556,12 @@
                         openProductPage('ghassoul');
                         break;
                     default:
-                        showHomePage();
+                        showPage('home');
                 }
+            } else if (page === 'all-products') {
+                showPage('all-products');
             } else {
-                showHomePage();
+                showPage('home');
             }
         });
 
