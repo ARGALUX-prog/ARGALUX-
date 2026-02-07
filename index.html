@@ -104,7 +104,7 @@
             100% { transform: translateX(-50%); } 
         }
 
-        /* HERO SECTION - MODIFIÉE AVEC LOGOS DE CERTIFICATION */
+        /* HERO SECTION - MODIFIÉE */
         #hero { 
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://github.com/user-attachments/assets/a6306777-45bd-4a87-8df6-0844b26414af') center/cover no-repeat; 
@@ -136,30 +136,6 @@
             margin-bottom: 2rem;
             font-weight: 300;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-        }
-        
-        /* NOUVEAU : LOGOS DE CERTIFICATION - CORRIGÉ */
-        .certification-logos {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.9); /* Fond blanc au lieu de transparent */
-            border-radius: var(--radius);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .certification-logo {
-            height: 60px; /* Augmenté la taille */
-            width: auto;
-            transition: transform 0.3s;
-            object-fit: contain;
-        }
-        
-        .certification-logo:hover {
-            transform: scale(1.1);
         }
         
         /* SECTION PROMOTIONS */
@@ -449,7 +425,7 @@
             margin-right: 5px;
         }
         
-        /* FOOTER */
+        /* FOOTER - MODIFIÉ AVEC LOGOS DE CERTIFICATION */
         footer { 
             background: #1A1A1A; 
             color: white; 
@@ -520,6 +496,51 @@
         .social-links a:hover { 
             color: var(--accent); 
             transform: translateY(-3px); 
+        }
+        
+        /* NOUVEAU : LOGOS DE CERTIFICATION DANS LE FOOTER */
+        .footer-certifications {
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-certifications h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-certification-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        
+        .footer-certification-logo {
+            height: 50px;
+            width: auto;
+            transition: transform 0.3s;
+            object-fit: contain;
+            filter: brightness(0) invert(1); /* Rend les logos blancs */
+        }
+        
+        .footer-certification-logo:hover {
+            transform: scale(1.1);
+        }
+        
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-bottom p {
+            color: #666;
+            font-size: 0.7rem;
+            margin-bottom: 0.5rem;
         }
         
         .whatsapp-float {
@@ -915,15 +936,6 @@
                 font-size: 1.2rem;
             }
             
-            .certification-logos {
-                gap: 1rem;
-                padding: 1rem;
-            }
-            
-            .certification-logo {
-                height: 50px;
-            }
-            
             .section-title {
                 font-size: 1.5rem;
             }
@@ -951,6 +963,14 @@
             .product-old-price-large {
                 font-size: 1.3rem;
             }
+
+            .footer-certification-logos {
+                gap: 1rem;
+            }
+            
+            .footer-certification-logo {
+                height: 40px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -972,13 +992,12 @@
                 font-size: 1rem;
             }
             
-            .certification-logos {
+            .footer-certification-logos {
                 gap: 0.7rem;
-                padding: 0.8rem;
             }
             
-            .certification-logo {
-                height: 40px;
+            .footer-certification-logo {
+                height: 35px;
             }
         }
     </style>
@@ -1010,20 +1029,11 @@
 
     <!-- PAGE PRINCIPALE (ACCUEIL) -->
     <div id="home-page" class="page-container active">
-        <!-- HERO SECTION AMÉLIORÉE AVEC LOGOS DE CERTIFICATION -->
+        <!-- HERO SECTION AMÉLIORÉE -->
         <section id="hero">
             <div class="hero-content">
                 <h1>L'Or du Maroc dans Votre Peau</h1>
                 <p class="subtitle">Découvrez la puissance régénérante de l'Argan 100% bio</p>
-                
-                <!-- LOGOS DE CERTIFICATION - CORRIGÉ -->
-                <div class="certification-logos">
-                    <img src="https://github.com/user-attachments/assets/d54e8254-5966-4b6e-9e45-491e4ac20048" alt="Certification Bio" class="certification-logo">
-                    <img src="https://github.com/user-attachments/assets/7f721c04-1f0d-4b23-9db8-5ca6ce14b078" alt="Certification Qualité" class="certification-logo">
-                    <img src="https://github.com/user-attachments/assets/c6a43102-d1a6-46d8-a8ad-9135c71b93d9" alt="Certification Écologique" class="certification-logo">
-                    <img src="https://github.com/user-attachments/assets/40f4d628-7a6b-4891-9b54-691091a6762e" alt="Certification Naturelle" class="certification-logo">
-                    <img src="https://github.com/user-attachments/assets/973c2e00-2788-458e-a73e-54756febb56a" alt="Certification Commerce Équitable" class="certification-logo">
-                </div>
             </div>
         </section>
         
@@ -1106,7 +1116,20 @@
                 <a onclick="showInfo('histoire')">L'Histoire Organix</a>
                 <a onclick="showInfo('processus')">Production Artisanale</a>
             </div>
-            <div style="color:#666; font-size:0.7rem; margin-top: 2rem;">
+
+            <!-- SECTION CERTIFICATIONS DANS LE FOOTER -->
+            <div class="footer-certifications">
+                <h3>Nos Certifications & Labels de Qualité</h3>
+                <div class="footer-certification-logos">
+                    <img src="https://github.com/user-attachments/assets/d54e8254-5966-4b6e-9e45-491e4ac20048" alt="Certification Bio" class="footer-certification-logo">
+                    <img src="https://github.com/user-attachments/assets/7f721c04-1f0d-4b23-9db8-5ca6ce14b078" alt="Certification Qualité" class="footer-certification-logo">
+                    <img src="https://github.com/user-attachments/assets/c6a43102-d1a6-46d8-a8ad-9135c71b93d9" alt="Certification Écologique" class="footer-certification-logo">
+                    <img src="https://github.com/user-attachments/assets/40f4d628-7a6b-4891-9b54-691091a6762e" alt="Certification Naturelle" class="footer-certification-logo">
+                    <img src="https://github.com/user-attachments/assets/973c2e00-2788-458e-a73e-54756febb56a" alt="Certification Commerce Équitable" class="footer-certification-logo">
+                </div>
+            </div>
+
+            <div class="footer-bottom">
                 <p>Chaque achat soutient les femmes artisanes berbères</p>
                 <p>&copy; 2024 Organix. Beauté Éthique & Naturelle.</p>
             </div>
