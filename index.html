@@ -138,7 +138,7 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
         
-        /* NOUVEAU : LOGOS DE CERTIFICATION */
+        /* NOUVEAU : LOGOS DE CERTIFICATION - CORRIGÉ */
         .certification-logos {
             display: flex;
             justify-content: center;
@@ -146,22 +146,20 @@
             gap: 1.5rem;
             margin-top: 2rem;
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.9); /* Fond blanc au lieu de transparent */
             border-radius: var(--radius);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
         .certification-logo {
-            height: 50px;
+            height: 60px; /* Augmenté la taille */
             width: auto;
-            filter: brightness(0) invert(1);
-            transition: transform 0.3s, filter 0.3s;
+            transition: transform 0.3s;
+            object-fit: contain;
         }
         
         .certification-logo:hover {
             transform: scale(1.1);
-            filter: brightness(0.8) invert(1);
         }
         
         /* SECTION PROMOTIONS */
@@ -923,7 +921,7 @@
             }
             
             .certification-logo {
-                height: 40px;
+                height: 50px;
             }
             
             .section-title {
@@ -980,7 +978,7 @@
             }
             
             .certification-logo {
-                height: 35px;
+                height: 40px;
             }
         }
     </style>
@@ -1018,7 +1016,7 @@
                 <h1>L'Or du Maroc dans Votre Peau</h1>
                 <p class="subtitle">Découvrez la puissance régénérante de l'Argan 100% bio</p>
                 
-                <!-- LOGOS DE CERTIFICATION -->
+                <!-- LOGOS DE CERTIFICATION - CORRIGÉ -->
                 <div class="certification-logos">
                     <img src="https://github.com/user-attachments/assets/d54e8254-5966-4b6e-9e45-491e4ac20048" alt="Certification Bio" class="certification-logo">
                     <img src="https://github.com/user-attachments/assets/7f721c04-1f0d-4b23-9db8-5ca6ce14b078" alt="Certification Qualité" class="certification-logo">
