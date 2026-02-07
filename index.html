@@ -964,8 +964,6 @@
             
             <ul class="nav-menu" id="navMenu">
                 <li><a onclick="showPage('home')">Accueil</a></li>
-                <li><a onclick="showPage('promo')">Promotions</a></li>
-                <li><a onclick="showPage('best-sellers')">Top Ventes</a></li>
                 <li><a onclick="showPage('all-products')">Tous les produits</a></li>
                 <li><a onclick="showPage('contact')">Contact</a></li>
             </ul>
@@ -1073,19 +1071,7 @@
         <section class="all-products-section">
             <div class="section-title">Tous Nos Produits</div>
             <div class="all-products-grid">
-                <a class="product-card" onclick="openProductPage('antichute')">
-                    <div class="product-image">
-                        <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pack Anti-Chute</h3>
-                        <div class="new-price">
-                            <span class="old-price-small">350 DH</span>300 DH
-                        </div>
-                        <small>Rituel complet</small>
-                    </div>
-                </a>
-
+                <!-- Produits restants après suppression des 4 produits spécifiés -->
                 <a class="product-card" onclick="openProductPage('gommage')">
                     <div class="product-image">
                         <img src="https://github.com/user-attachments/assets/8e985882-44cf-4ff5-816e-43eb34e8ff32" alt="Gommage">
@@ -1097,17 +1083,6 @@
                     </div>
                 </a>
 
-                <a class="product-card" onclick="openProductPage('argalux50')">
-                    <div class="product-image">
-                        <img src="https://github.com/user-attachments/assets/36fcd538-c4fa-46e5-be50-06bf6a3b42fb" alt="Huile Argan">
-                    </div>
-                    <div class="product-info">
-                        <h3>Huile d'Argan Pure</h3>
-                        <div class="new-price">80 DH</div>
-                        <small>Multi-usage premium</small>
-                    </div>
-                </a>
-
                 <a class="product-card" onclick="openProductPage('ghassoul')">
                     <div class="product-image">
                         <img src="https://github.com/user-attachments/assets/e26ede55-6360-4786-b564-58c3cf4243e3" alt="Masque Ghassoul">
@@ -1116,29 +1091,6 @@
                         <h3>Masque Ghassoul</h3>
                         <div class="new-price">100 DH</div>
                         <small>Purification intense</small>
-                    </div>
-                </a>
-                
-                <!-- Produits supplémentaires pour montrer tous les produits -->
-                <a class="product-card" onclick="openProductPage('antichute')">
-                    <div class="product-image">
-                        <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
-                    </div>
-                    <div class="product-info">
-                        <h3>Pack Anti-Chute (Grand)</h3>
-                        <div class="new-price">450 DH</div>
-                        <small>Format familial</small>
-                    </div>
-                </a>
-
-                <a class="product-card" onclick="openProductPage('argalux50')">
-                    <div class="product-image">
-                        <img src="https://github.com/user-attachments/assets/36fcd538-c4fa-46e5-be50-06bf6a3b42fb" alt="Huile Argan">
-                    </div>
-                    <div class="product-info">
-                        <h3>Huile d'Argan 100ml</h3>
-                        <div class="new-price">150 DH</div>
-                        <small>Format économique</small>
                     </div>
                 </a>
             </div>
@@ -1171,9 +1123,7 @@
                             <div class="product-thumbnail active" onclick="changeProductImage('antichute', 'https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f')">
                                 <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
                             </div>
-                            <div class="product-thumbnail" onclick="changeProductImage('antichute', 'https://github.com/user-attachments/assets/36fcd538-c4fa-46e5-be50-06bf6a3b42fb')">
-                                <img src="https://github.com/user-attachments/assets/36fcd538-c4fa-46e5-be50-06bf6a3b42fb" alt="Huile d'Argan">
-                            </div>
+                            <!-- L'image de l'huile a été supprimée comme demandé -->
                         </div>
                     </div>
                     
