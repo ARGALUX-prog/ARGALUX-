@@ -651,10 +651,8 @@
         }
 
         .product-page-hero {
-            background: linear-gradient(135deg, #f9f5f0 0%, #f0e6d6 100%);
+            background: #f5f1eb; /* Couleur beige doux */
             padding: 3rem 5%;
-            border-bottom-left-radius: 60px;
-            margin-bottom: 2rem;
             padding-top: 110px;
         }
 
@@ -699,14 +697,29 @@
             width: 100%;
             border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             margin-bottom: 1.5rem;
+            position: relative;
         }
 
         .product-main-image img {
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .product-image-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--danger);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            z-index: 5;
+            animation: pulseRed 1.5s infinite;
         }
 
         .product-thumbnails {
@@ -743,27 +756,21 @@
 
         .product-page-info {
             flex: 1;
+            background: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
         .product-page-header {
             margin-bottom: 2rem;
-        }
-
-        .product-page-badge {
-            display: inline-block;
-            background: var(--danger);
-            color: white;
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            animation: pulseRed 1.5s infinite;
+            border-bottom: 2px solid #f0e6d6;
+            padding-bottom: 1.5rem;
         }
 
         .product-page-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: var(--text);
             line-height: 1.2;
             margin-bottom: 1rem;
@@ -773,49 +780,10 @@
             font-size: 1.1rem;
             color: #666;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .product-page-pricing {
-            background: white;
-            border-radius: var(--radius);
-            padding: 2rem;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 2rem;
-        }
-
-        .product-price-section {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-            flex-wrap: wrap;
-        }
-
-        .product-old-price-large {
-            color: var(--danger);
-            text-decoration: line-through;
-            font-size: 1.8rem;
-            font-weight: 600;
-        }
-
-        .product-new-price-large {
-            color: var(--accent);
-            font-size: 3rem;
-            font-weight: 700;
-        }
-
-        .product-discount-percent {
-            background: var(--danger);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            font-weight: 700;
         }
 
         .product-benefits {
-            margin-bottom: 2rem;
+            margin: 2rem 0;
         }
 
         .product-benefits-title {
@@ -844,12 +812,32 @@
             left: 0;
         }
 
-        .product-page-cta {
-            text-align: center;
+        .product-page-price-section {
             background: #f9f5f0;
+            border-radius: 15px;
             padding: 2rem;
-            border-radius: var(--radius);
-            margin-top: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px dashed var(--accent);
+        }
+
+        .product-page-price {
+            color: var(--accent);
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-page-price-label {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .product-page-shipping {
+            color: #25D366;
+            font-weight: 600;
+            margin-top: 0.5rem;
         }
 
         .product-whatsapp-button {
@@ -857,7 +845,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: var(--primary); /* CHANGÉ EN MARRON */
+            background: var(--primary); /* Marron */
             color: white;
             text-decoration: none;
             padding: 1.2rem 3rem;
@@ -865,7 +853,7 @@
             font-size: 1.2rem;
             font-weight: 600;
             transition: all 0.3s;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
             box-shadow: 0 5px 15px rgba(188, 143, 143, 0.3);
             width: 100%;
             max-width: 400px;
@@ -877,41 +865,6 @@
             background: #a87a7a;
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(188, 143, 143, 0.4);
-        }
-
-        .product-cta-note {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
-        }
-
-        .product-price-with-button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .final-price-box {
-            background: white;
-            padding: 1rem 2rem;
-            border-radius: var(--radius);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: 2px solid var(--accent);
-        }
-
-        .final-price-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .final-price {
-            color: var(--accent);
-            font-size: 2.5rem;
-            font-weight: 700;
         }
 
         .back-to-home {
@@ -996,12 +949,8 @@
                 font-size: 1.8rem;
             }
 
-            .product-new-price-large {
+            .product-page-price {
                 font-size: 2.5rem;
-            }
-
-            .product-old-price-large {
-                font-size: 1.5rem;
             }
 
             .footer-certification-logos {
@@ -1010,11 +959,6 @@
             
             .footer-certification-logo {
                 height: 40px;
-            }
-
-            .product-price-with-button {
-                flex-direction: column;
-                gap: 1.5rem;
             }
         }
         
@@ -1045,12 +989,8 @@
                 height: 35px;
             }
 
-            .product-new-price-large {
+            .product-page-price {
                 font-size: 2rem;
-            }
-
-            .product-old-price-large {
-                font-size: 1.3rem;
             }
         }
     </style>
@@ -1095,7 +1035,7 @@
             <h2 class="section-title">Offre Spéciale Limitée</h2>
             <a class="promo-card" onclick="openProductPage('antichute')">
                 <div class="promo-image">
-                    <div class="promo-badge">PROMO -20%</div>
+                    <div class="promo-badge">PROMO -15%</div>
                     <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
                 </div>
                 <div class="promo-info">
@@ -1239,58 +1179,39 @@
                 <div class="product-page-grid">
                     <div class="product-page-images">
                         <div class="product-main-image">
+                            <div class="product-image-badge">PROMO -15%</div>
                             <img id="antichute-main-img" src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute Complet">
-                        </div>
-                        
-                        <div class="product-thumbnails">
-                            <div class="product-thumbnail active" onclick="changeProductImage('antichute', 'https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f')">
-                                <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
-                            </div>
                         </div>
                     </div>
                     
                     <div class="product-page-info">
                         <div class="product-page-header">
-                            <div class="product-page-badge">PROMO FLASH</div>
                             <h1 class="product-page-title">Pack Anti-Chute Complet</h1>
                             <p class="product-page-description">La solution ultime contre la chute des cheveux ! Formule enrichie en argan pur et actifs naturels pour des cheveux plus forts, plus épais et en pleine santé.</p>
                         </div>
                         
-                        <div class="product-page-pricing">
-                            <div class="product-price-section">
-                                <span class="product-old-price-large">350 DH</span>
-                                <span class="product-new-price-large">299 DH</span>
-                                <span class="product-discount-percent">-15%</span>
+                        <div class="product-benefits">
+                            <h3 class="product-benefits-title">Résultats Garantis</h3>
+                            <ul class="product-benefits-list">
+                                <li><strong>Réduit la chute de 80%</strong> dès 3 semaines</li>
+                                <li><strong>Stimule la repousse</strong> des cheveux</li>
+                                <li><strong>Double le volume</strong> et la densité</li>
+                                <li><strong>Répare les pointes</strong> fourchues</li>
+                                <li><strong>100% naturel</strong> - Sans produits chimiques</li>
+                                <li><strong>Rituel complet</strong> - 4 produits synergiques</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-page-price-section">
+                            <div class="product-page-price-label">PRIX SPÉCIAL</div>
+                            <div class="product-page-price">299 DH</div>
+                            <div class="product-page-shipping">
+                                <i class="fas fa-shipping-fast"></i> Livraison gratuite partout au Maroc
                             </div>
                             
-                            <div class="product-benefits">
-                                <h3 class="product-benefits-title">Résultats Garantis</h3>
-                                <ul class="product-benefits-list">
-                                    <li><strong>Réduit la chute de 80%</strong> dès 3 semaines</li>
-                                    <li><strong>Stimule la repousse</strong> des cheveux</li>
-                                    <li><strong>Double le volume</strong> et la densité</li>
-                                    <li><strong>Répare les pointes</strong> fourchues</li>
-                                    <li><strong>100% naturel</strong> - Sans produits chimiques</li>
-                                    <li><strong>Rituel complet</strong> - 4 produits synergiques</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="product-page-cta">
-                                <div class="product-price-with-button">
-                                    <div class="final-price-box">
-                                        <div class="final-price-label">PRIX FINAL</div>
-                                        <div class="final-price">299 DH</div>
-                                        <div style="font-size: 0.8rem; color: #25D366; margin-top: 0.5rem;">
-                                            <i class="fas fa-shipping-fast"></i> Livraison gratuite
-                                        </div>
-                                    </div>
-                                    
-                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Pack Anti-Chute Complet au prix de 299 DH" class="product-whatsapp-button" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> COMMANDER MAINTENANT
-                                    </a>
-                                </div>
-                                <p class="product-cta-note">Livraison OFFERTE · Réponse en 5min</p>
-                            </div>
+                            <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Pack Anti-Chute Complet au prix de 299 DH" class="product-whatsapp-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i> COMMANDER MAINTENANT
+                            </a>
                         </div>
                         
                         <a class="back-to-home" onclick="showPage('all-products')">
@@ -1324,36 +1245,25 @@
                             <p class="product-page-description">L'exfoliant magique qui révèle une peau neuve ! Formulé avec de la figue de barbarie, ce gommage efface les imperfections et illumine votre teint.</p>
                         </div>
                         
-                        <div class="product-page-pricing">
-                            <div class="product-price-section">
-                                <span class="product-new-price-large">150 DH</span>
-                            </div>
+                        <div class="product-benefits">
+                            <h3 class="product-benefits-title">Transformez Votre Peau</h3>
+                            <ul class="product-benefits-list">
+                                <li><strong>Exfolie en douceur</strong> sans agresser</li>
+                                <li><strong>Efface les rides</strong> et ridules</li>
+                                <li><strong>Unifie le teint</strong> naturellement</li>
+                                <li><strong>Prépare la peau</strong> aux soins</li>
+                                <li><strong>Visage & Corps</strong> - 2 en 1</li>
+                                <li><strong>Senteur naturelle</strong> de figue</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-page-price-section">
+                            <div class="product-page-price-label">PRIX</div>
+                            <div class="product-page-price">150 DH</div>
                             
-                            <div class="product-benefits">
-                                <h3 class="product-benefits-title">Transformez Votre Peau</h3>
-                                <ul class="product-benefits-list">
-                                    <li><strong>Exfolie en douceur</strong> sans agresser</li>
-                                    <li><strong>Efface les rides</strong> et ridules</li>
-                                    <li><strong>Unifie le teint</strong> naturellement</li>
-                                    <li><strong>Prépare la peau</strong> aux soins</li>
-                                    <li><strong>Visage & Corps</strong> - 2 en 1</li>
-                                    <li><strong>Senteur naturelle</strong> de figue</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="product-page-cta">
-                                <div class="product-price-with-button">
-                                    <div class="final-price-box">
-                                        <div class="final-price-label">PRIX</div>
-                                        <div class="final-price">150 DH</div>
-                                    </div>
-                                    
-                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Gommage Figue Barbarie au prix de 150 DH" class="product-whatsapp-button" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> ACHETER CE PRODUIT
-                                    </a>
-                                </div>
-                                <p class="product-cta-note">Produit limité · Livraison rapide</p>
-                            </div>
+                            <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Gommage Figue Barbarie au prix de 150 DH" class="product-whatsapp-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i> ACHETER CE PRODUIT
+                            </a>
                         </div>
                         
                         <a class="back-to-home" onclick="showPage('all-products')">
@@ -1387,36 +1297,25 @@
                             <p class="product-page-description">L'élixir de jeunesse marocain ! Extraite à froid, notre huile d'argan 100% bio est le secret de beauté des femmes berbères depuis des siècles.</p>
                         </div>
                         
-                        <div class="product-page-pricing">
-                            <div class="product-price-section">
-                                <span class="product-new-price-large">80 DH</span>
-                            </div>
+                        <div class="product-benefits">
+                            <h3 class="product-benefits-title">10 Usages, 1 Flacon</h3>
+                            <ul class="product-benefits-list">
+                                <li><strong>Hydrate intensément</strong> visage & corps</li>
+                                <li><strong>Répare les cheveux</strong> secs & abîmés</li>
+                                <li><strong>Atténue les cicatrices</strong> et vergetures</li>
+                                <li><strong>Anti-âge naturel</strong> - Rides & taches</li>
+                                <li><strong>Renforce les ongles</strong> et cuticules</li>
+                                <li><strong>Soin après-rasage</strong> apaisant</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-page-price-section">
+                            <div class="product-page-price-label">PRIX</div>
+                            <div class="product-page-price">80 DH</div>
                             
-                            <div class="product-benefits">
-                                <h3 class="product-benefits-title">10 Usages, 1 Flacon</h3>
-                                <ul class="product-benefits-list">
-                                    <li><strong>Hydrate intensément</strong> visage & corps</li>
-                                    <li><strong>Répare les cheveux</strong> secs & abîmés</li>
-                                    <li><strong>Atténue les cicatrices</strong> et vergetures</li>
-                                    <li><strong>Anti-âge naturel</strong> - Rides & taches</li>
-                                    <li><strong>Renforce les ongles</strong> et cuticules</li>
-                                    <li><strong>Soin après-rasage</strong> apaisant</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="product-page-cta">
-                                <div class="product-price-with-button">
-                                    <div class="final-price-box">
-                                        <div class="final-price-label">PRIX</div>
-                                        <div class="final-price">80 DH</div>
-                                    </div>
-                                    
-                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander l'Huile d'Argan Pure au prix de 80 DH" class="product-whatsapp-button" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> AJOUTER AU PANIER
-                                    </a>
-                                </div>
-                                <p class="product-cta-note">Best-seller · 4.9/5 étoiles</p>
-                            </div>
+                            <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander l'Huile d'Argan Pure au prix de 80 DH" class="product-whatsapp-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i> AJOUTER AU PANIER
+                            </a>
                         </div>
                         
                         <a class="back-to-home" onclick="showPage('all-products')">
@@ -1450,36 +1349,25 @@
                             <p class="product-page-description">La purification ancestrale ! Ce masque 100% minéral nettoie en profondeur votre peau et cuir chevelu pour une sensation de fraîcheur immédiate.</p>
                         </div>
                         
-                        <div class="product-page-pricing">
-                            <div class="product-price-section">
-                                <span class="product-new-price-large">100 DH</span>
-                            </div>
+                        <div class="product-benefits">
+                            <h3 class="product-benefits-title">Double Action Purifiante</h3>
+                            <ul class="product-benefits-list">
+                                <li><strong>Nettoie les pores</strong> en profondeur</li>
+                                <li><strong>Régule l'excès de sébum</strong> naturellement</li>
+                                <li><strong>Purifie le cuir chevelu</strong> - Anti-pellicules</li>
+                                <li><strong>Illumine le teint</strong> instantanément</li>
+                                <li><strong>Raffermit la peau</strong> - Effet lifting</li>
+                                <li><strong>Parfum fleur d'oranger</strong> envoûtant</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="product-page-price-section">
+                            <div class="product-page-price-label">PRIX</div>
+                            <div class="product-page-price">100 DH</div>
                             
-                            <div class="product-benefits">
-                                <h3 class="product-benefits-title">Double Action Purifiante</h3>
-                                <ul class="product-benefits-list">
-                                    <li><strong>Nettoie les pores</strong> en profondeur</li>
-                                    <li><strong>Régule l'excès de sébum</strong> naturellement</li>
-                                    <li><strong>Purifie le cuir chevelu</strong> - Anti-pellicules</li>
-                                    <li><strong>Illumine le teint</strong> instantanément</li>
-                                    <li><strong>Raffermit la peau</strong> - Effet lifting</li>
-                                    <li><strong>Parfum fleur d'oranger</strong> envoûtant</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="product-page-cta">
-                                <div class="product-price-with-button">
-                                    <div class="final-price-box">
-                                        <div class="final-price-label">PRIX</div>
-                                        <div class="final-price">100 DH</div>
-                                    </div>
-                                    
-                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Masque Ghassoul au prix de 100 DH" class="product-whatsapp-button" target="_blank">
-                                        <i class="fab fa-whatsapp"></i> COMMANDER CE MASQUE
-                                    </a>
-                                </div>
-                                <p class="product-cta-note">Argile naturelle · Pot de 200g</p>
-                            </div>
+                            <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Masque Ghassoul au prix de 100 DH" class="product-whatsapp-button" target="_blank">
+                                <i class="fab fa-whatsapp"></i> COMMANDER CE MASQUE
+                            </a>
                         </div>
                         
                         <a class="back-to-home" onclick="showPage('all-products')">
@@ -1727,6 +1615,10 @@
                 content: `
                     <h2 class="modal-h2">L'Histoire Organix</h2>
                     <p class="modal-text">Notre histoire commence en 2002 dans le petit village de Tiout, au cœur de l'arganeraie marocaine. À cette époque, les femmes berbères pratiquaient la production d'huile d'argan de façon artisanale et isolée.</p>
+                    
+                    <div class="objective-img">
+                        <img src="https://github.com/user-attachments/assets/6ce7141d-278e-46b1-a167-9bc2b3a18c76" alt="Notre Objectif" style="width:100%; border-radius:15px; margin:20px 0;">
+                    </div>
                     
                     <p class="modal-text"><strong>Le Déclic :</strong> Après une visite inspirante dans les coopératives d'Essaouira, 18 femmes courageuses décident de créer la <strong>Coopérative Agricole Féminine de Taitmatine</strong>.</p>
                     
