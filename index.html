@@ -524,11 +524,11 @@
             width: auto;
             transition: transform 0.3s;
             object-fit: contain;
-            filter: brightness(0) invert(1); /* Rend les logos blancs */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Contour pour meilleure visibilité */
+            /* FILTRE RETIRÉ pour afficher les logos en couleur */
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 5px;
             padding: 5px;
-            background: rgba(255, 255, 255, 0.05);
+            background: white; /* Fond blanc pour mieux voir les logos */
         }
         
         .footer-certification-logo:hover {
@@ -788,14 +788,14 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
             flex-wrap: wrap;
         }
 
         .product-old-price-large {
             color: var(--danger);
             text-decoration: line-through;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
         }
 
@@ -846,6 +846,10 @@
 
         .product-page-cta {
             text-align: center;
+            background: #f9f5f0;
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-top: 2rem;
         }
 
         .product-whatsapp-button {
@@ -853,7 +857,7 @@
             align-items: center;
             justify-content: center;
             gap: 1rem;
-            background: #25D366;
+            background: var(--primary); /* CHANGÉ EN MARRON */
             color: white;
             text-decoration: none;
             padding: 1.2rem 3rem;
@@ -862,21 +866,52 @@
             font-weight: 600;
             transition: all 0.3s;
             margin-bottom: 1rem;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            box-shadow: 0 5px 15px rgba(188, 143, 143, 0.3);
             width: 100%;
             max-width: 400px;
             cursor: pointer;
+            border: none;
         }
 
         .product-whatsapp-button:hover {
-            background: #1da851;
+            background: #a87a7a;
             transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 20px rgba(188, 143, 143, 0.4);
         }
 
         .product-cta-note {
             font-size: 0.9rem;
             color: #666;
+            margin-top: 1rem;
+        }
+
+        .product-price-with-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .final-price-box {
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 2px solid var(--accent);
+        }
+
+        .final-price-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .final-price {
+            color: var(--accent);
+            font-size: 2.5rem;
+            font-weight: 700;
         }
 
         .back-to-home {
@@ -966,7 +1001,7 @@
             }
 
             .product-old-price-large {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
 
             .footer-certification-logos {
@@ -975,6 +1010,11 @@
             
             .footer-certification-logo {
                 height: 40px;
+            }
+
+            .product-price-with-button {
+                flex-direction: column;
+                gap: 1.5rem;
             }
         }
         
@@ -1003,6 +1043,14 @@
             
             .footer-certification-logo {
                 height: 35px;
+            }
+
+            .product-new-price-large {
+                font-size: 2rem;
+            }
+
+            .product-old-price-large {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -1055,7 +1103,7 @@
                     <p>Arrêtez la chute des cheveux avec notre rituel à l'argan pur. Résultats garantis en 3 semaines !</p>
                     <div class="promo-price">
                         <span class="old-price">350 DH</span>
-                        <span class="new-price">300 DH</span>
+                        <span class="new-price">299 DH</span>
                     </div>
                 </div>
             </a>
@@ -1198,13 +1246,12 @@
                             <div class="product-thumbnail active" onclick="changeProductImage('antichute', 'https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f')">
                                 <img src="https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f" alt="Pack Anti-Chute">
                             </div>
-                            <!-- L'image de l'huile a été supprimée comme demandé -->
                         </div>
                     </div>
                     
                     <div class="product-page-info">
                         <div class="product-page-header">
-                            <div class="product-page-badge">PROMO FLASH -20%</div>
+                            <div class="product-page-badge">PROMO FLASH</div>
                             <h1 class="product-page-title">Pack Anti-Chute Complet</h1>
                             <p class="product-page-description">La solution ultime contre la chute des cheveux ! Formule enrichie en argan pur et actifs naturels pour des cheveux plus forts, plus épais et en pleine santé.</p>
                         </div>
@@ -1212,9 +1259,8 @@
                         <div class="product-page-pricing">
                             <div class="product-price-section">
                                 <span class="product-old-price-large">350 DH</span>
-                                <span class="product-new-price-large">300 DH</span>
-                                <span class="product-discount-percent">-20%</span>
-                                <span style="background:#25D366; color:white; padding:0.5rem 1rem; border-radius:50px; font-size:0.9rem; font-weight:600; margin-left:1rem;">Livraison gratuite</span>
+                                <span class="product-new-price-large">299 DH</span>
+                                <span class="product-discount-percent">-15%</span>
                             </div>
                             
                             <div class="product-benefits">
@@ -1230,9 +1276,19 @@
                             </div>
                             
                             <div class="product-page-cta">
-                                <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Pack Anti-Chute Complet au prix de 300 DH" class="product-whatsapp-button" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> COMMANDER MAINTENANT
-                                </a>
+                                <div class="product-price-with-button">
+                                    <div class="final-price-box">
+                                        <div class="final-price-label">PRIX FINAL</div>
+                                        <div class="final-price">299 DH</div>
+                                        <div style="font-size: 0.8rem; color: #25D366; margin-top: 0.5rem;">
+                                            <i class="fas fa-shipping-fast"></i> Livraison gratuite
+                                        </div>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Pack Anti-Chute Complet au prix de 299 DH" class="product-whatsapp-button" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> COMMANDER MAINTENANT
+                                    </a>
+                                </div>
                                 <p class="product-cta-note">Livraison OFFERTE · Réponse en 5min</p>
                             </div>
                         </div>
@@ -1286,9 +1342,16 @@
                             </div>
                             
                             <div class="product-page-cta">
-                                <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Gommage Figue Barbarie au prix de 150 DH" class="product-whatsapp-button" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> ACHETER CE PRODUIT
-                                </a>
+                                <div class="product-price-with-button">
+                                    <div class="final-price-box">
+                                        <div class="final-price-label">PRIX</div>
+                                        <div class="final-price">150 DH</div>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Gommage Figue Barbarie au prix de 150 DH" class="product-whatsapp-button" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> ACHETER CE PRODUIT
+                                    </a>
+                                </div>
                                 <p class="product-cta-note">Produit limité · Livraison rapide</p>
                             </div>
                         </div>
@@ -1342,9 +1405,16 @@
                             </div>
                             
                             <div class="product-page-cta">
-                                <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander l'Huile d'Argan Pure au prix de 80 DH" class="product-whatsapp-button" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> AJOUTER AU PANIER
-                                </a>
+                                <div class="product-price-with-button">
+                                    <div class="final-price-box">
+                                        <div class="final-price-label">PRIX</div>
+                                        <div class="final-price">80 DH</div>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander l'Huile d'Argan Pure au prix de 80 DH" class="product-whatsapp-button" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> AJOUTER AU PANIER
+                                    </a>
+                                </div>
                                 <p class="product-cta-note">Best-seller · 4.9/5 étoiles</p>
                             </div>
                         </div>
@@ -1398,9 +1468,16 @@
                             </div>
                             
                             <div class="product-page-cta">
-                                <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Masque Ghassoul au prix de 100 DH" class="product-whatsapp-button" target="_blank">
-                                    <i class="fab fa-whatsapp"></i> COMMANDER CE MASQUE
-                                </a>
+                                <div class="product-price-with-button">
+                                    <div class="final-price-box">
+                                        <div class="final-price-label">PRIX</div>
+                                        <div class="final-price">100 DH</div>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/212621891963?text=Bonjour, je souhaite commander le Masque Ghassoul au prix de 100 DH" class="product-whatsapp-button" target="_blank">
+                                        <i class="fab fa-whatsapp"></i> COMMANDER CE MASQUE
+                                    </a>
+                                </div>
                                 <p class="product-cta-note">Argile naturelle · Pot de 200g</p>
                             </div>
                         </div>
@@ -1594,9 +1671,9 @@
         const productDetails = {
             'antichute': {
                 title: 'Pack Anti-Chute Complet à l\'Argan',
-                price: '300 DH',
+                price: '299 DH',
                 img: 'https://github.com/user-attachments/assets/84c481fc-f17b-44fd-9440-162b33ad701f',
-                text: '<b>Description :</b> Rituel complet pour cheveux fragiles avec huile d\'argan pure.<br><b>Actif Principal :</b> Argan pur reconnu pour ses propriétés fortifiantes.<br><b>Cible :</b> Cheveux fragiles ou sujets à la chute.<br><b>Composition :</b> Rituel complet (masque, huile, shampooing, sérum).<br><br><b>Utilité :</b> Freine la chute, réparation profonde et vitalité du cuir chevelu.<br><b>Prix original :</b> <s>350 DH</s><br><b>Prix promotion :</b> <strong>300 DH (-20%)</strong>'
+                text: '<b>Description :</b> Rituel complet pour cheveux fragiles avec huile d\'argan pure.<br><b>Actif Principal :</b> Argan pur reconnu pour ses propriétés fortifiantes.<br><b>Cible :</b> Cheveux fragiles ou sujets à la chute.<br><b>Composition :</b> Rituel complet (masque, huile, shampooing, sérum).<br><br><b>Utilité :</b> Freine la chute, réparation profonde et vitalité du cuir chevelu.<br><b>Prix original :</b> <s>350 DH</s><br><b>Prix promotion :</b> <strong>299 DH (-15%)</strong>'
             },
             'gommage': {
                 title: 'Soin Exfoliant Régénérant – Figue de Barbarie',
