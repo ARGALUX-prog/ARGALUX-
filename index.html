@@ -525,6 +525,10 @@
             transition: transform 0.3s;
             object-fit: contain;
             filter: brightness(0) invert(1); /* Rend les logos blancs */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Contour pour meilleure visibilité */
+            border-radius: 5px;
+            padding: 5px;
+            background: rgba(255, 255, 255, 0.05);
         }
         
         .footer-certification-logo:hover {
@@ -785,6 +789,7 @@
             align-items: center;
             gap: 1rem;
             margin-bottom: 1.5rem;
+            flex-wrap: wrap;
         }
 
         .product-old-price-large {
@@ -1209,6 +1214,7 @@
                                 <span class="product-old-price-large">350 DH</span>
                                 <span class="product-new-price-large">300 DH</span>
                                 <span class="product-discount-percent">-20%</span>
+                                <span style="background:#25D366; color:white; padding:0.5rem 1rem; border-radius:50px; font-size:0.9rem; font-weight:600; margin-left:1rem;">Livraison gratuite</span>
                             </div>
                             
                             <div class="product-benefits">
